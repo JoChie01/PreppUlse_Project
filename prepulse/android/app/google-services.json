@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1094036504525",
+    "project_id": "preppulse-1ea65",
+    "storage_bucket": "preppulse-1ea65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094036504525:android:8b78a5dd2e1344c62cce84",
+        "android_client_info": {
+          "package_name": "com.flutter.prepulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6-oC_b5db84YGDDVkGv-O4MlPKaqOzCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
