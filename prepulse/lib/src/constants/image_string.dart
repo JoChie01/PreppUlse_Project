@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 const String Preplogo = "assets/images/prepulse_circle_logo.png";
 const String Splashscreenlogo = "assets/images/Prepulse_splashscreen_logo.gif";
 const String Prepbanner = "assets/images/prepulse_banner.png";

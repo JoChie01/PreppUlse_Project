@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, unused_field, prefer_final_fields, avoid_unnecessary_containers
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:prepulse/pages/01.home/home_page.dart';
 import 'package:prepulse/pages/02.orderStatus/order_status_page.dart';
 import 'package:prepulse/pages/03.analytics/analytics_page.dart';
@@ -8,7 +11,6 @@ import 'package:prepulse/pages/04.alerts/alerts_page.dart';
 import 'package:prepulse/pages/05.reports/reports_page.dart';
 import 'package:prepulse/pages/06.settings/settings_page.dart';
 import 'package:prepulse/styles/styles.dart';
-
 
 class Mydrawer extends StatefulWidget {
   final int currentIndex;
@@ -41,10 +43,17 @@ class _MydrawerState extends State<Mydrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: Colors.black,
-      child: Column(children: [
-        drawerHeader(),
-        drawerList(),
-      ]),
+      child: Stack(
+        children: [
+          Column(children: [
+            drawerHeader(),
+            drawerList(),
+          ]),
+          Align(
+              alignment: Alignment.bottomCenter,
+              child: Positioned(bottom: 20, child: logOut()))
+        ],
+      ),
     );
   }
 
@@ -130,6 +139,34 @@ class _MydrawerState extends State<Mydrawer> {
                         )),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget logOut() {
+    return Card(
+      margin: EdgeInsets.only(bottom: 20),
+      elevation: 10,
+      color: const Color.fromARGB(255, 71, 214, 76),
+      child: Container(
+        width: 150,
+        height: 40,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "Log Out",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
+            FaIcon(
+              FontAwesomeIcons.rightFromBracket,
+              color: Colors.black,
+            )
+          ],
         ),
       ),
     );
