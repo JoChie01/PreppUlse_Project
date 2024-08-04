@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace, avoid_print
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 import 'package:flutter/material.dart';
 import 'package:prepulse/pages/01.home/widgets/add_products.dart';
@@ -16,7 +17,8 @@ class MenuDisplay extends StatefulWidget {
 
 class _MenuDisplayState extends State<MenuDisplay> {
 
-  
+   DatabaseReference dbRef =
+        FirebaseDatabase.instance.ref().child('contacts');
   @override
   Widget build(BuildContext context) {
     return Expanded(

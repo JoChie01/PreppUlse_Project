@@ -16,8 +16,6 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // Initialize Realtime Database
-  final FirebaseDatabase database = FirebaseDatabase.instance;
 
   runApp(const App());
 }
