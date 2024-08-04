@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace, avoid_print
 
 import 'package:auto_size_text/auto_size_text.dart';
+
 import 'package:flutter/material.dart';
+import 'package:prepulse/pages/01.home/widgets/add_products.dart';
 import 'package:prepulse/pages/02.orderStatus/order_status_page.dart';
 import 'package:prepulse/src/constants/colors.dart';
-
 
 class MenuDisplay extends StatefulWidget {
   const MenuDisplay({super.key});
@@ -14,6 +15,8 @@ class MenuDisplay extends StatefulWidget {
 }
 
 class _MenuDisplayState extends State<MenuDisplay> {
+
+  
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -24,22 +27,7 @@ class _MenuDisplayState extends State<MenuDisplay> {
               crossAxisCount: 4,
               childAspectRatio: 0.70356741,
               children: [
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
-                productCard(),
+                AddProducts(),
               ],
             ),
           ),
@@ -73,7 +61,7 @@ class _MenuDisplayState extends State<MenuDisplay> {
     );
   }
 
-  Widget productCard() {
+  Widget productCard(String pName, pPrice) {
     double padding = MediaQuery.of(context).size.height * 0.011458333;
     return Card(
       color: pWhiteColor,
@@ -121,7 +109,8 @@ class _MenuDisplayState extends State<MenuDisplay> {
                   child: AutoSizeText("Add to dish",
                       maxLines: 1,
                       minFontSize: 10,
-                      style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 20)),
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 20)),
                 ),
               ])),
     );

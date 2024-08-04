@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_final_fields, prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_final_fields, prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +14,6 @@ class _CategoriesState extends State<Categories> {
   int _selectedCategory = 0;
   int allItems = 1145;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,10 +22,10 @@ class _CategoriesState extends State<Categories> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          cetegoryBox("All items", allItems.toString(), 0),
-          ...List.generate(8, (index) {
-            return cetegoryBox("Category ${index + 1}", "10", index + 1);
-          })
+          // cetegoryBox("All items", allItems.toString(), 0),
+          // ...List.generate(8, (index) {
+          //   return cetegoryBox("Category ${index + 1}", "10", index + 1);
+          // })
         ],
       ),
     );

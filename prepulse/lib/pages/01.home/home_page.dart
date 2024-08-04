@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, unused_local_variable
 
 import 'package:flutter/material.dart';
 import 'package:prepulse/navigation/mydrawer.dart';
@@ -6,7 +6,6 @@ import 'package:prepulse/pages/01.home/widgets/appbar.dart';
 import 'package:prepulse/pages/01.home/widgets/categories.dart';
 import 'package:prepulse/pages/01.home/widgets/menu_display.dart';
 import 'package:prepulse/pages/01.home/widgets/receipt_section.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,6 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool categories = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +34,11 @@ class _HomePageState extends State<HomePage> {
             color: Colors.grey[200],
             width: MediaQuery.of(context).size.width * 0.6743055556,
             child: Column(
-              children: [Appbar(), Categories(), MenuDisplay()],
+              children: [
+                Appbar(),
+                categories ? Categories() : Container(),
+                MenuDisplay()
+              ],
             )),
         //right container
         Container(
