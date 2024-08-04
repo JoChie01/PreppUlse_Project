@@ -10,13 +10,13 @@ import 'package:prepulse/src/screen_pages/splash_screen.dart';
 import 'package:prepulse/src/themes/theme.dart';
 
 void main() async {
+  //initialize firebase
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
-
+//run your app
   runApp(const App());
 }
 

@@ -15,10 +15,9 @@ class MenuDisplay extends StatefulWidget {
   State<MenuDisplay> createState() => _MenuDisplayState();
 }
 
-class _MenuDisplayState extends State<MenuDisplay> {
+final databaseReference = FirebaseDatabase.instance.ref();
 
-   DatabaseReference dbRef =
-        FirebaseDatabase.instance.ref().child('contacts');
+class _MenuDisplayState extends State<MenuDisplay> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -30,6 +29,13 @@ class _MenuDisplayState extends State<MenuDisplay> {
               childAspectRatio: 0.70356741,
               children: [
                 AddProducts(),
+                ElevatedButton(
+                    onPressed: () {
+                      databaseReference
+                          .child("Products")
+                          .set({"hello": "hi", "Pdocut": "hi"});
+                    },
+                    child: Text('add'))
               ],
             ),
           ),
